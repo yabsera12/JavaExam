@@ -1,0 +1,42 @@
+public class bunkerArray2 {
+    public static void main(String[] args) {
+
+        /*System.out.println(isBunker(new int[]{7, 6, 10}));
+        System.out.println(isBunker(new int[]{6, 10, 1}));
+        System.out.println(isBunker(new int[]{3, 7, 1, 8, 1}));
+        System.out.println("*******************************");*/
+        System.out.println(isBunker(new int[]{7, 6, 10, 1}));
+        System.out.println(isBunker(new int[]{8,6,1,10,7,1}));
+        System.out.println(isBunker(new int[]{8, 6 ,10}));
+        System.out.println(isBunker(new int[]{8,1,6,19,10,7}));
+        System.out.println(isBunker(new int[]{8,6,1,10}));
+        System.out.println(isBunker(new int[]{8,6,19,10,7}));
+    }
+    public static int isBunker(int [] a) {
+        boolean isPrimee = false;
+        boolean isOne = false;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == 1) {
+                isOne = true;
+            }
+            if (isprime(a[i]) == 1 && a[i] != 1) {
+                isPrimee = true;
+            }
+        }
+        if (isPrimee && isOne){
+            return 1;
+        }
+        return 0;
+
+    }
+    public static int isprime(int n){
+        int j = 2;
+        while (n > j) {
+            if (n % j == 0) {
+                return 0;
+            }
+            j++;
+        }
+        return 1;
+    }
+}
