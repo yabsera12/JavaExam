@@ -23,7 +23,7 @@ public class bunkerArray2 {
                 isPrimee = true;
             }
         }
-        if (isPrimee && isOne){
+        if ((isPrimee && isOne) || (!isPrimee && !isOne)){
             return 1;
         }
         return 0;
