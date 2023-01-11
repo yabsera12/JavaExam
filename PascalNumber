@@ -1,0 +1,18 @@
+public class PascalNumber {
+    public static void main(String[] args) {
+        System.out.println(isPascal(6));
+        System.out.println(isPascal(15));
+        System.out.println(isPascal(7));
+    }
+    static int isPascal (int n){
+        int sum = 0;
+        for (int i = 1; i<n; i++){
+            sum += i;
+            if (sum == n){
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+}
