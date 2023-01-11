@@ -1,0 +1,35 @@
+public class asdad {
+    public static void main(String[] args) {
+        System.out.println(up(new int[]{11, 4, 9, 2, 8,}));
+        System.out.println(up(new int[]{11, 4, 9, 2, 3, 10}));
+        System.out.println(up(new int[]{1}));
+        System.out.println(up(new int[]{2}));
+        System.out.println(up(new int[]{1, 1, 1, 1, 1, 1,}));
+        System.out.println(up(new int[]{2, 4, 6, 8, 11}));
+        System.out.println(up(new int[]{-2, 4, -6, -8, -11}));
+        System.out.println(" 1, 0, 1 , 0 , 1 , 1 , 0");
+    }
+    static int up(int[] a) {
+
+        Boolean isOdd = false;
+        for (int odd : a){
+            if ( odd > 0 && odd % 2 != 0){
+                isOdd = true;
+                for (int even : a ){
+                    if (even % 2 == 0){
+                        if (odd > even){
+                            continue;
+                        }
+                        else {
+                            return 0;
+                        }
+                    }
+                }
+            }
+        }
+        if (isOdd){
+            return 1;
+        }
+        return 0;
+    }
+}
