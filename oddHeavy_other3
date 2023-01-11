@@ -1,0 +1,30 @@
+public class oddHeavy {
+    public static void main(String[] args) {
+        System.out.println(up(new int[]{11, 4, 9, 2, 8,}));
+        System.out.println(up(new int[]{11, 4, 9, 2, 3, 10}));
+        System.out.println(up(new int[]{1}));
+        System.out.println(up(new int[]{2}));
+        System.out.println(up(new int[]{1, 1, 1, 1, 1, 1,}));
+        System.out.println(up(new int[]{2, 4, 6, 8, 11}));
+        System.out.println(up(new int[]{-2, 4, -6, -8, -11}));
+
+    }
+
+    static int up(int[] a) {
+    if (a.length < 2 && a[0] % 2 ==0) {
+            return 0;
+        }
+            for ( int i=0; i< a.length; i++) {
+                if (a[i] % 2 != 0) {
+                    for (int j = 0; j < a.length; j++) {
+                        if (a[j] % 2 == 0) {
+                            if (a[i] < a[j]) {
+                                return 0;
+                            }
+                        }
+                    }
+                }
+            }
+        return 1;
+    
+ }
