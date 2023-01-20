@@ -1,0 +1,36 @@
+public class mnSequence {
+    public static void main(String[] args) {
+        System.out.println( base10(new int[] {1,2,3,4,5},1,5));
+        System.out.println( base10(new int[] {1,3,4,2,5},1,5));
+        System.out.println( base10(new int[] {-5,-5,-4,-4,-4,-3,-3,-2,-2,-2},-5,-2));
+        System.out.println( base10(new int[] {0,1,2,3,4,5},1,5));
+        System.out.println( base10(new int[] {1,2,3,4},1,5));
+        System.out.println( base10(new int[] {1,2,5},1,5));
+        System.out.println( base10(new int[] {5,4,3,2,1},1,5));
+    }
+
+public static int base10(int[] a, int m, int n) {
+        if ( a[0] ==m && a[a.length-1] == n && m < n ){
+            for (int i=m+1; i < n; i++){
+                boolean haveI = false;
+                int initial = 0;
+                for (int j=1; j<a.length-1; j++){
+                    if (a[initial] < a[j] && i == a[j]){
+                        haveI = true;
+
+                    }
+                    else if (a[initial] > a[j] && i == a[j]){
+                        return 0;
+                    }
+                    initial++;
+                }
+                if (!haveI){
+                    return 0;
+                }
+            }
+            return 1;
+        }
+        return 0;
+
+    }
+}
