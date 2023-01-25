@@ -15,7 +15,7 @@ public class ReverseString {
 
     }
 
-    public static int unique_array(int a) {
+    public static int reverseNum2(int a) {
         int store = 0;
         while (a != 0){
             int mod = a % 10;
