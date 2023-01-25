@@ -1,0 +1,28 @@
+public class ReverseString {
+    public static void main(String[] args) {
+
+        System.out.println(unique_array(1234));
+        System.out.println(unique_array(12005));
+        System.out.println(unique_array(1));
+        System.out.println(unique_array(1000));
+        System.out.println(unique_array(0));
+        System.out.println(unique_array(-12345));
+
+
+
+
+        System.out.println(unique_array(123456789));
+
+    }
+
+    public static int unique_array(int a) {
+        int store = 0;
+        while (a != 0){
+            int mod = a % 10;
+            store = store * 10 + mod;
+
+            a = a/10;
+        }
+        return store;
+    }
+}
