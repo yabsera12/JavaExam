@@ -1,0 +1,30 @@
+public class jhbg {
+    public static void main(String[] args){
+        int result = nextPerfectSquare(6);
+        System.out.println(result);
+        result = nextPerfectSquare(36);
+        System.out.println(result);
+        result = nextPerfectSquare(0);
+        System.out.println(result);
+        result = nextPerfectSquare(-5);
+        System.out.println(result);
+    }
+    static int nextPerfectSquare(int n){
+        if (n<0){
+            return 0;
+        }
+        else if (n == 0){
+            return 1;
+        }
+        for (int i=1; i<n; i++){
+            if (i * i > n){
+                return i * i;
+            }
+        }
+        return 0;
+    }
+
+
+
+}
+
