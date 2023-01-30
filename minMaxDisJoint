@@ -1,0 +1,47 @@
+public class jhbg {
+    public static void main(String[] args) {
+
+        System.out.println(n(new int[] {5,4,1,2,3}));
+        System.out.println("box");
+        System.out.println(n(new int[] {18,-1,3,4,0}));
+        System.out.println(n(new int[] {9,0,5,9}));
+        System.out.println(n(new int[] {0,5,18,0,9}));
+        System.out.println(n(new int[] {7,7,7,7}));
+        System.out.println(n(new int[] {}));
+        System.out.println(n(new int[] {1,2}));
+        System.out.println(n(new int[] {1}));
+    }
+    public static int n (int a[]) {
+        if (a.length < 3){
+            return 0;
+        }
+        int minNumber = a[0] ;
+        int maxNumber = a[0];
+        int minIndex = 0;
+        int maxIndex = 0;
+        for (int i=1; i<a.length;i++){
+            if (maxNumber < a[i]){
+                maxNumber = a[i];
+                maxIndex = i;
+            } else if (minNumber > a[i]) {
+                minNumber = a[i];
+                minIndex = i;
+            }
+        }
+        if (maxNumber != minNumber){
+            for (int i=0; i<a.length; i++){
+                if (minNumber == a[i] && i != minIndex){
+                    return 0;
+                }
+                else if (maxNumber == a[i] && i != maxIndex){
+                    return 0;
+                }
+            }
+            if (maxIndex + 1 != minIndex && maxNumber -1 != minNumber){
+                return 1;
+            }
+        }
+        return 0;
+    }
+}
+
