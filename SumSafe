@@ -1,0 +1,26 @@
+public class SumSafe {
+    public static void main(String[] args) {
+        System.out.println(isSumSafe(new int[]{5,-5,0}));
+        System.out.println(isSumSafe(new int[]{5,-2,1}));
+        System.out.println(isSumSafe(new int[]{1,2,3,4,5}));
+        System.out.println(isSumSafe(new int[]{4}));
+
+    }
+    private static int isSumSafe(int[] a){
+        if (a==null || a.length <=1){
+            return 0;
+        }
+        int sum = 0;
+        for (int i=0; i<a.length; i++){
+            sum += a[i];
+        }
+        for (int i=0; i<a.length; i++){
+            if (a[i] == sum){
+                return 0;
+            }
+        }
+        return 1;
+
+    }
+}
+
