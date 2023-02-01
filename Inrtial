@@ -1,0 +1,15 @@
+public class Program
+{
+    public static void main(String[] args) {
+        
+    }
+    public static isItrital(int[] a){
+        
+        boolean isEven = false;
+        int max= a[0]
+        for(int i=0; i<a.length;i++){
+        
+        }
+        
+    }
+}
