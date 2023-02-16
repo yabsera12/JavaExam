@@ -1,0 +1,59 @@
+public class BeanArrayVsNiceArray {
+    public static void main(String[] args) {
+        System.out.println(isBean2(new int[]{2, 10, 9, 3}));
+        System.out.println(isBean2(new int[]{2, 2, 3, 3, 3}));
+        System.out.println(isBean2(new int[]{1, 1, 1, 2, 1, 1}));
+        System.out.println(isBean2(new int[]{0, -1, 1}));
+        System.out.println(isBean2(new int[]{3, 4, 5, 7}));
+    }
+    static int isBean2(int[ ] a){
+        for (int i=0; i<a.length; i++){
+            int minus = a[i] - 1;
+            int plus = a[i] + 1;
+            boolean is = false;
+            for (int j=0; j<a.length; j++){
+                if (minus == a[j] || plus == a[j]){
+                    is = true;
+                    break;
+                }
+            }
+            if (!is){
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+}
+/*
+
+public class bean3 {
+    public static void main(String[] args) {
+        System.out.println(bean(new int []  {2, 10, 9, 3}));
+        System.out.println(bean(new int []  {2, 2, 3, 3, 3}));
+        System.out.println(bean(new int []  {1, 1, 1, 2, 1, 1}));
+        System.out.println(bean(new int []  {0, -1, 1}));
+        System.out.println(bean(new int []  {3, 4, 5, 7} ));
+    }
+    public static int bean (int [] a){
+        for (int i=0; i< a.length; i++){
+            int add = a[i] +1;
+            int sun = a[i] -1;
+            boolean is = false;
+            for (int j = 0; j<a.length; j++){
+                if (add == a[j] || sun == a[j]){
+                    is = true;
+                }
+            }
+            if (!is){
+                return 0;
+            }
+        }
+        return 1;
+
+    }
+
+
+}
+
+ */
