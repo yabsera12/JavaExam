@@ -1,0 +1,60 @@
+public class  MeeraArray3 {
+    public static void main(String[] args) {
+        System.out.println(meeraArray(new int []  {7, 6, 0, 10, 1}));
+        System.out.println(meeraArray(new int []   {6, 10, 1}));
+        System.out.println(meeraArray(new int []    {7, 6, 10}));
+        System.out.println(meeraArray(new int []   {6, 10, 0}  ));
+        System.out.println(meeraArray(new int []  {3, 7, 0, 8, 0, 5}));
+
+    }
+    static int meeraArray ( int [] a){
+        boolean isPrime = false;
+        boolean isZero = false;
+        for (int i=0; i<a.length; i++){
+            if(isPrime(a[i]) == 1 && a[i]!= 1){
+                isPrime = true;
+            }
+            if (a[i] == 0){
+                isZero = true;
+            }
+        }
+        if (isPrime && isZero || !isPrime && !isZero){
+            return 1;
+        }
+        return 0;
+    }
+    static int isPrime(int n){
+        if (n <= 0){
+            return 0;
+        }
+        for (int i=2 ; i<n; i++){
+            if (n % i == 0){
+                return 0;
+            }
+        }
+        return 1;
+
+    }
+}
+/*
+static int meeraArray(int[] a) {
+
+        boolean isZero = false;
+        boolean containPrime = false;
+        for (int i = 0; i < a.length; i++) {
+            if (isPrime(a[i]) == 1 && a[i] != 0) {
+                containPrime = true;
+            }
+            if (a[i] == 0) {
+                isZero = true;
+            }
+        }
+        if (containPrime){
+            if (isZero){
+                return 1;
+            }
+        }
+
+        return 0;
+    }
+ */
