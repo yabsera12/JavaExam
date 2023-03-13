@@ -1,0 +1,45 @@
+public class minDistance {
+    public static void main(String[] args) {
+        System.out.println(minDistance(13013));
+        System.out.println(minDistance(0));
+    }
+
+    static int minDistance(int n) {
+        int i = 1;
+        int divisibleCounter = 1;
+        int m = Integer.MAX_VALUE;
+        if (n <= 0){
+            return 0;
+        }
+        for (int j =2 ; j<n; j++){
+            if ( n % j == 0){
+                divisibleCounter++;
+                if (j - i < m){
+                    m = j - i ;
+
+                }
+                i = j ;
+            }
+            if (divisibleCounter < 2){
+                return 1;
+            }
+        }
+        return m;
+    }
+
+}
+/*
+static int minDistance(int n) {
+        int b = 1;
+        int min = Integer.MAX_VALUE;
+        for (int i = 2; i < n; i++){
+            if (n % i == 0 && n % b ==0 ){
+                if (i- b < min ){
+                    min = i - b;
+                    b = i;
+                }
+            }
+        }
+        return min;
+    }
+ */
