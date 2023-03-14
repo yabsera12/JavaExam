@@ -1,0 +1,32 @@
+public class NiceArray {
+    public static void main(String[] args) {
+        System.out.println(isComplete(new int[]{2, 3, 3, 6}));
+        System.out.println(isComplete(new int[]{2, -3, 4, 3, 6}));
+        System.out.println(isComplete(new int[]{2, 3, 2, 4, 11, 6, 10, 9, 8}));
+    }
+
+    static int isComplete(int[] a) {
+        int maxValue = Integer.MIN_VALUE;
+        for (int k : a) {
+            if (k <= 0) {
+                return 0;
+            }
+            if ((k > maxValue && k % 2 == 0)) {
+                maxValue = k;
+            }
+        }
+        for (int i= 2; i<maxValue; i+=2){
+            boolean is = false;
+            for (int j : a){
+                if (i == j){
+                    is = true;
+                }
+            }
+            if (!is ){
+                return 0;
+            }
+        }
+        return 1;
+    }
+
+}
