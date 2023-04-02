@@ -1,0 +1,25 @@
+public class njjn {
+    public static void main(String[] args) {
+        System.out.println(isGuthrie(22));
+        System.out.println(isGuthrie(11));
+        System.out.println(isGuthrie(8));
+
+    }
+    static int isGuthrie (int n){
+        int one = 1;
+        int two = 1;
+        int sum = 1;
+        while (true){
+            sum = one + two;
+            one = sum;
+            two++;
+            if (n == sum){
+                return 1;
+            }
+            else if (sum > n){
+                return 0;
+            }
+        }
+    }
+
+}
