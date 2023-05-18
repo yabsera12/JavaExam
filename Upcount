@@ -1,0 +1,19 @@
+
+public class java {
+    public static void main(String[] args) {
+        System.out.print(n(new int[]{2,3,1,-6,8,-3,-1,2},5));
+    }
+    static int n (int[] a, int n){
+        int sum = a[0];
+        int oldSum = a[0];
+        int count = 0;
+        for(int i=1; i<a.length; i++){
+            sum = sum + a[i];
+            if(oldSum < n && sum >= n ){
+                count++;
+                oldSum =a[i];
+            }
+        }
+        return count;
+    }
+}
