@@ -1,0 +1,23 @@
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println(sumFactor(new int[]{3,0,2,-5,0}));
+        System.out.println(sumFactor(new int[]{9,-3,-3,-1,-1}));
+    }
+    static int sumFactor(int [] a){
+        int counter =0;
+        int availableNumberCounter=0;
+        for(int i=0;i<a.length;i++){
+            counter+=a[i];
+            if(i == a.length-1){
+                for(int j=0; j<a.length;j++){
+                    if(counter == a[j]){
+                        availableNumberCounter++;
+                    }
+                }
+            }
+        }
+        return availableNumberCounter;
+    }
+}
